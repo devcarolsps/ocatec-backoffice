@@ -53,3 +53,4 @@ composer.json
 *.env.local
 *.env.production
 .env
+*env

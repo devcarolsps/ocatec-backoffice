@@ -1,0 +1,61 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: laravel_app_backoffice
+    ports:
+      - "8085:80"
+    volumes:
+      # monta apenas o código-fonte (sem storage/cache)
+      - ./app:/var/www/html/app
+      - ./bootstrap:/var/www/html/bootstrap
+      - ./config:/var/www/html/config
+      - ./database:/var/www/html/database
+      - ./public:/var/www/html/public
+      - ./resources:/var/www/html/resources
+      - ./routes:/var/www/html/routes
+      - ./composer.json:/var/www/html/composer.json
+      - ./composer.lock:/var/www/html/composer.lock
+      # volumes persistentes para storage e cache
+      - laravel_storage_backoffice:/var/www/html/storage
+      - laravel_cache_backoffice:/var/www/html/bootstrap/cache
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_HOST=185.239.210.154
+      - DB_DATABASE=u447435355_ocatec
+      - DB_USERNAME=u447435355_ocatec
+      - DB_PASSWORD="Husqvarna1@"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - db
+    command: >
+      bash -c "mkdir -p storage/logs &&
+               touch storage/logs/laravel.log &&
+               chown -R www-data:www-data storage bootstrap/cache &&
+               chmod -R 775 storage bootstrap/cache &&
+               php artisan storage:link || true &&
+               apache2-foreground"
+
+  db:
+    image: mysql:5.7
+    container_name: laravel_db_backoffice
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "Husqvarna1@"
+      MYSQL_DATABASE: u447435355_ocatec
+      MYSQL_USER: u447435355_ocatec
+      MYSQL_PASSWORD: "Husqvarna1@"
+    volumes:
+      - db_data_backoffice:/var/lib/mysql
+    ports:
+      - "3309:3306"
+
+volumes:
+  db_data_backoffice:
+  laravel_storage_backoffice:
+  laravel_cache_backoffice:
