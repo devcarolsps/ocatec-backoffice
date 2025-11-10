@@ -44,13 +44,18 @@
                                 <li class="side-nav-item">
                                     <a data-bs-toggle="collapse" href="#sidebarExtendedUIEmpreendimento" aria-expanded="true" aria-controls="sidebarExtendedUIEmpreendimento" class="side-nav-link">
                                         <i class="uil-package"></i>
-                                        <span> Empreendimentos </span>
+                                        <span> Gerenciamento  </span>
                                         <span class="menu-arrow"></span>
                                     </a>
                                     <div class="collapse" id="sidebarExtendedUIEmpreendimento" style="">
                                         <ul class="side-nav-second-level">
                                             <li>
-                                                <a href="{{ route('empreendimentos.hospedagens') }}">Nova hospedagens</a>
+                                                <a href="{{ route('empreendimentos.hospedagens') }}">hospedagens</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="side-nav-second-level">
+                                            <li>
+                                                <a href="{{ route('formularios.index') }}">Consultas</a>
                                             </li>
                                         </ul>
                                     </div>

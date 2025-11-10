@@ -44,12 +44,7 @@ class HospedagensRepository
     {
         throw_if(empty($dados), 'Sem dados para gravar.');
 
-        $hospedagem = $id ? Hospedagens::query()->findOrFail($id) : new Hospedagens;
-
-        if(empty($id)){
-            $dados['status'] = StatusEnum::ANALISE_ID;
-            $dados['codigo'] = generateCode(5);
-        }
+        $hospedagem = new Hospedagens;
 
         $hospedagem->fill($dados);
 

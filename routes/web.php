@@ -5,6 +5,7 @@ use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\UserDocumentsController;
 use App\Http\Controllers\HospedagensController;
 use App\Http\Controllers\AfiliacaoController;
+use App\Http\Controllers\FormularioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,3 +59,7 @@ Route::group(['prefix' => 'mercado'], function () {
         Route::post('/afiliar', [AfiliacaoController::class, 'store']);
     });
 });
+
+Route::get('/formularios', [FormularioController::class, 'view'])->name('formularios.index');
+Route::get('/formularios/list', [FormularioController::class, 'list'])->name('formularios.list');
+Route::post('/formularios/acao', [FormularioController::class, 'acao'])->name('formularios.acao');

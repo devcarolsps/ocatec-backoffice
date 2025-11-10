@@ -29,6 +29,12 @@ services:
       - DB_DATABASE=u447435355_ocatec
       - DB_USERNAME=u447435355_ocatec
       - DB_PASSWORD="Husqvarna1@"
+      - WP_DB_CONNECTION=mysql_wp
+      - WP_DB_HOST=185.239.210.154
+      - WP_DB_PORT=3306
+      - WP_DB_DATABASE=u447435355_7b2HD
+      - WP_DB_USERNAME=u447435355_IJkjM
+      - WP_DB_PASSWORD="L2Zg2fXGZg"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     depends_on:

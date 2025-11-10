@@ -70,11 +70,11 @@
 		<script src={{ asset('lib/toastr/toastr.min.js') }}></script>
 
 
-  <!-- DataTable Js -->
-  <script src="{{ asset('lib/dataTablesBootstrap4/js/jquery.dataTables.min.js') }}"/></script>
-  <script src="{{ asset('lib/dataTablesBootstrap4/js/dataTables.bootstrap4.js') }}" /></script>
-  <script src="{{ asset('lib/dataTablesBootstrap4/js/dataTables.responsive.min.js') }}"/></script>
-  <script src="{{ asset('lib/dataTablesBootstrap4/js/responsive.bootstrap4.min.js') }}"/></script>
+      <!-- DataTable Js -->
+        <script src="{{ asset('lib/dataTablesBootstrap4/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('lib/dataTablesBootstrap4/js/dataTables.bootstrap4.js') }}"></script>
+        <script src="{{ asset('lib/dataTablesBootstrap4/js/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('lib/dataTablesBootstrap4/js/responsive.bootstrap4.min.js') }}"></script>
 
 
 		<!-- PDFJS -->

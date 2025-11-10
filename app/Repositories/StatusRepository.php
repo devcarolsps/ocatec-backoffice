@@ -25,6 +25,7 @@ class StatusRepository
             '4' => StatusEnum::RECUSADO,
             '5' => StatusEnum::APROVADO,
             '6' => StatusEnum::PENDENTE,
+            '7' => StatusEnum::DESENVOLVIMENTO,
         ];
 
         return $statusName[$statusId];
@@ -51,6 +52,9 @@ class StatusRepository
                 break;
             case 4:
                 $badgeStatus = '<span class="badge" style="background-color: red;color: white;font-size: 1em;">' . strtoupper($this->statusName($statusId)) . '</span>';
+                break;
+            case 7:
+                $badgeStatus = '<span class="badge" style="background-color: purple;color: white;font-size: 1em;">' . strtoupper($this->statusName($statusId)) . '</span>';
                 break;
             default:
                 $badgeStatus = '';

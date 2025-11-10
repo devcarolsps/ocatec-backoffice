@@ -19,6 +19,11 @@ class StatusEnum
      *
      */
     public const ANALISE = 'em analise';
+
+    /**
+     *
+     */
+    public const DESENVOLVIMENTO = 'em desenvolvimento';
     /**
      *
      */
@@ -30,8 +35,10 @@ class StatusEnum
     /**
      *
      */
-    public const PROPOSTA_ID = 1;
-    public const ANALISE_ID = 2;
+    public const PROPOSTA_ID = 1; // 'em proposta';
+    public const ANALISE_ID = 2; //'em analise';
+    public const DESENVOLVIMENTO_ID = 7; //'em desenvolvimento';
+    public const APROVADO_HOSPEDAGEM = 4; //'aprovado para o usuario conseguir buscar pelo codigo e preencher o restante dos dados da hospedagem';
 
 
     public const APROVADO = 'aprovado';
